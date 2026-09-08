@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Top up Diamond Mobile Legends cepat, aman, dan praktis di TOKO DIAMOND RISMA.">
+	<meta name="theme-color" content="#101827">
+	<title>TOKO DIAMOND RISMA | Top Up Mobile Legends</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--navy: #101827;
+			--navy-2: #18243a;
+			--blue: #4774ff;
+			--blue-dark: #315ee5;
+			--cyan: #6fe8e6;
+			--yellow: #ffd76a;
+			--paper: #f5f7fb;
+			--muted: #748097;
+			--line: #e4e8f0;
+			--white: #fff;
+			--shadow: 0 16px 40px rgba(24, 36, 58, .08);
+		}
+
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+		html { scroll-behavior: smooth; }
+		body { background: var(--paper); color: var(--navy); font-family: "DM Sans", sans-serif; line-height: 1.5; }
+		a { color: inherit; text-decoration: none; }
+		button, input { font: inherit; }
+		button { cursor: pointer; }
+		.container { margin: auto; max-width: 1180px; width: calc(100% - 44px); }
+
+		.topbar { background: var(--navy); color: rgba(255,255,255,.7); font-size: 12px; padding: 9px 0; }
+		.topbar-inner { align-items: center; display: flex; justify-content: space-between; }
+		.topbar strong { color: var(--cyan); font-weight: 700; }
+		.topbar-right { display: flex; gap: 22px; }
+		header { background: var(--white); border-bottom: 1px solid var(--line); }
+		nav { align-items: center; display: flex; height: 76px; justify-content: space-between; }
+		.brand { align-items: center; display: flex; gap: 11px; }
+		.brand-logo { align-items: center; background: var(--blue); border-radius: 10px; color: white; display: flex; font-size: 19px; font-weight: 800; height: 39px; justify-content: center; transform: rotate(-7deg); width: 39px; }
+		.brand-name { font-family: Manrope, sans-serif; font-size: 15px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; text-transform: uppercase; }
+		.brand-name span { color: var(--blue); display: block; }
+		.nav-links { display: flex; gap: 30px; margin-left: auto; margin-right: 30px; }
+		.nav-links a { color: var(--muted); font-size: 13px; font-weight: 600; }
+		.nav-links a:hover { color: var(--blue); }
+		.status { align-items: center; color: #3e9a77; display: flex; font-size: 12px; font-weight: 700; gap: 7px; }
+		.status::before { background: #44c58b; border-radius: 50%; box-shadow: 0 0 0 4px #e4f8ed; content: ""; height: 7px; width: 7px; }
+
+		.hero { overflow: hidden; padding: 78px 0 86px; position: relative; }
+		.hero::before { background: var(--cyan); border-radius: 50%; content: ""; height: 450px; opacity: .17; position: absolute; right: -180px; top: -180px; width: 450px; }
+		.hero-grid { align-items: center; display: grid; gap: 50px; grid-template-columns: 1.15fr .85fr; position: relative; }
+		.eyebrow { align-items: center; color: var(--blue); display: flex; font-size: 12px; font-weight: 800; gap: 9px; letter-spacing: .11em; text-transform: uppercase; }
+		.eyebrow::before { background: var(--blue); content: ""; height: 2px; width: 24px; }
+		h1, h2, h3 { font-family: Manrope, sans-serif; letter-spacing: -.055em; }
+		h1 { font-size: clamp(42px, 6vw, 76px); line-height: .99; margin: 20px 0 22px; max-width: 690px; }
+		h1 span { color: var(--blue); }
+		.hero-copy { color: var(--muted); font-size: 16px; max-width: 510px; }
+		.hero-button { background: var(--blue); border: 0; border-radius: 7px; color: white; display: inline-flex; font-size: 13px; font-weight: 700; gap: 12px; margin-top: 30px; padding: 14px 19px; transition: background .2s, transform .2s; }
+		.hero-button:hover { background: var(--blue-dark); transform: translateY(-2px); }
+		.hero-note { color: var(--muted); font-size: 12px; margin-left: 15px; }
+		.hero-card { background: var(--navy-2); border-radius: 16px; box-shadow: 0 24px 55px rgba(16,24,39,.22); color: white; min-height: 278px; overflow: hidden; padding: 28px; position: relative; }
+		.hero-card::after { border: 1px solid rgba(111,232,230,.35); border-radius: 50%; content: ""; height: 220px; position: absolute; right: -65px; top: -55px; width: 220px; }
+		.hero-card-label { color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+		.hero-card h2 { font-size: 29px; line-height: 1.08; margin: 18px 0 22px; max-width: 220px; }
+		.hero-card h2 span { color: var(--yellow); }
+		.hero-card-footer { align-items: end; display: flex; justify-content: space-between; position: relative; z-index: 1; }
+		.hero-card-footer small { color: rgba(255,255,255,.56); display: block; font-size: 10px; margin-bottom: 2px; }
+		.hero-card-footer strong { font-size: 13px; }
+		.card-arrow { color: var(--cyan); font-size: 24px; }
+
+		.trust { background: var(--white); border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); }
+		.trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+		.trust-item { align-items: center; border-right: 1px solid var(--line); display: flex; gap: 13px; padding: 22px 25px 22px 0; }
+		.trust-item + .trust-item { padding-left: 25px; }
+		.trust-item:last-child { border-right: 0; }
+		.trust-icon { align-items: center; background: #eef2ff; border-radius: 8px; color: var(--blue); display: flex; font-size: 18px; height: 38px; justify-content: center; width: 38px; }
+		.trust-item strong { display: block; font-size: 13px; }
+		.trust-item small { color: var(--muted); display: block; font-size: 11px; margin-top: 2px; }
+
+		.shop-section { padding: 84px 0 100px; }
+		.section-head { align-items: end; display: flex; justify-content: space-between; margin-bottom: 30px; }
+		.section-kicker { color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+		h2.section-title { font-size: 35px; margin-top: 8px; }
+		.section-description { color: var(--muted); font-size: 13px; max-width: 280px; text-align: right; }
+		.shop-grid { align-items: start; display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr) 340px; }
+		.products { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+		.product { background: var(--white); border: 1px solid var(--line); border-radius: 9px; padding: 20px 18px; position: relative; transition: border-color .2s, box-shadow .2s, transform .2s; }
+		.product:hover { border-color: #b7c8ff; box-shadow: var(--shadow); transform: translateY(-2px); }
+		.product.selected { border: 2px solid var(--blue); box-shadow: 0 10px 25px rgba(71,116,255,.14); padding: 19px 17px; }
+		.product-badge { background: var(--yellow); border-radius: 4px; color: #80631a; font-size: 9px; font-weight: 800; padding: 4px 6px; position: absolute; right: 12px; text-transform: uppercase; top: 12px; }
+		.diamond { align-items: center; background: #e9fcfb; border-radius: 50%; color: #2da9ad; display: flex; font-size: 16px; height: 38px; justify-content: center; margin-bottom: 22px; width: 38px; }
+		.product h3 { font-size: 17px; letter-spacing: -.03em; }
+		.product p { color: var(--muted); font-size: 11px; margin-top: 4px; }
+		.price { display: block; font-family: Manrope, sans-serif; font-size: 15px; margin-top: 19px; }
+		.product button { background: #eef2ff; border: 0; border-radius: 5px; color: var(--blue); font-size: 11px; font-weight: 800; margin-top: 14px; padding: 9px 12px; width: 100%; }
+		.product.selected button, .product button:hover { background: var(--blue); color: white; }
+
+		.checkout { background: var(--white); border: 1px solid var(--line); border-radius: 11px; box-shadow: var(--shadow); padding: 24px; position: sticky; top: 20px; }
+		.checkout h3 { font-size: 21px; letter-spacing: -.04em; }
+		.checkout-subtitle { color: var(--muted); font-size: 11px; margin: 4px 0 21px; }
+		.field { margin-bottom: 14px; }
+		.field label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 7px; }
+		.field input { border: 1px solid var(--line); border-radius: 5px; color: var(--navy); outline: 0; padding: 11px 12px; width: 100%; }
+		.field input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(71,116,255,.1); }
+		.field-note { color: var(--muted); display: block; font-size: 10px; margin-top: 5px; }
+		.payment-title { font-size: 11px; font-weight: 700; margin: 19px 0 9px; }
+		.payments { display: grid; gap: 7px; grid-template-columns: repeat(3, 1fr); }
+		.pay-option { background: var(--paper); border: 1px solid var(--line); border-radius: 5px; color: var(--muted); font-size: 10px; font-weight: 700; padding: 9px 4px; text-align: center; }
+		.pay-option.active { background: #eef2ff; border-color: var(--blue); color: var(--blue); }
+		.pay-option input { display: none; }
+		.order-total { border-top: 1px solid var(--line); display: flex; justify-content: space-between; margin-top: 20px; padding-top: 17px; }
+		.order-total span { color: var(--muted); font-size: 11px; }
+		.order-total strong { font-family: Manrope, sans-serif; font-size: 16px; }
+		.checkout-submit { background: var(--blue); border: 0; border-radius: 6px; color: white; font-size: 12px; font-weight: 800; margin-top: 18px; padding: 13px; width: 100%; }
+		.checkout-submit:hover { background: var(--blue-dark); }
+		.secure { color: var(--muted); font-size: 10px; margin-top: 12px; text-align: center; }
+		.notice { background: #fff9e7; border-radius: 7px; color: #80631a; display: none; font-size: 11px; line-height: 1.45; margin-top: 12px; padding: 10px; }
+		.notice.show { display: block; }
+
+		footer { background: var(--navy); color: white; padding: 42px 0 25px; }
+		.footer-main { align-items: start; display: flex; justify-content: space-between; }
+		footer .brand-name { color: white; }
+		footer .brand-name span { color: var(--cyan); }
+		.footer-copy { color: rgba(255,255,255,.55); font-size: 12px; margin-top: 14px; max-width: 265px; }
+		.footer-links { display: flex; gap: 25px; }
+		.footer-links a { color: rgba(255,255,255,.7); font-size: 12px; }
+		.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.42); font-size: 10px; margin-top: 38px; padding-top: 17px; }
+
+		@media (max-width: 800px) {
+			.nav-links { display: none; }
+			.hero { padding: 58px 0 65px; }
+			.hero-grid { grid-template-columns: 1fr; }
+			.hero-card { max-width: 430px; }
+			.products { grid-template-columns: repeat(2, 1fr); }
+			.shop-grid { grid-template-columns: 1fr; }
+			.checkout { position: static; }
+		}
+		@media (max-width: 500px) {
+			.container { width: calc(100% - 30px); }
+			.topbar-right { display: none; }
+			nav { height: 68px; }
+			.status { font-size: 10px; }
+			h1 { font-size: 44px; }
+			.hero-note { display: block; margin: 13px 0 0; }
+			.trust-inner { grid-template-columns: 1fr; }
+			.trust-item, .trust-item + .trust-item { border-bottom: 1px solid var(--line); border-right: 0; padding: 14px 0; }
+			.trust-item:last-child { border-bottom: 0; }
+			.shop-section { padding: 60px 0 75px; }
+			.section-head { align-items: start; display: block; }
+			.section-description { margin-top: 12px; text-align: left; }
+			h2.section-title { font-size: 30px; }
+			.products { gap: 9px; }
+			.product { padding: 15px 12px; }
+			.product.selected { padding: 14px 11px; }
+			.product h3 { font-size: 15px; }
+			.footer-main { display: block; }
+			.footer-links { margin-top: 24px; }
+		}
+	</style>
+</head>
+<body>
+	<div class="topbar"><div class="container topbar-inner"><span>Top up lebih cepat, main lebih puas. <strong>Proses otomatis 24 jam.</strong></span><div class="topbar-right"><span>Butuh bantuan?</span><span>WhatsApp: 089652347498</span></div></div></div>
+	<header><div class="container"><nav><a class="brand" href="#top"><span class="brand-logo">R</span><span class="brand-name">Toko Diamond<span>Risma</span></span></a><div class="nav-links"><a href="#produk">Produk</a><a href="#cara-order">Cara Order</a><a href="#bantuan">Bantuan</a></div><span class="status">Toko online</span></nav></div></header>
+
+	<main id="top">
+		<section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Top up Mobile Legends</p><h1>Push rank tanpa <span>jeda.</span></h1><p class="hero-copy">Diamond Mobile Legends resmi dengan proses cepat, harga transparan, dan pilihan pembayaran yang praktis.</p><a class="hero-button" href="#produk">Pilih diamond <span>↓</span></a><span class="hero-note">✓ Aman &nbsp; ✓ Cepat &nbsp; ✓ Terpercaya</span></div><div class="hero-card"><p class="hero-card-label">Flash offer hari ini</p><h2>Dapatkan <span>bonus</span> untuk setiap top up.</h2><div class="hero-card-footer"><div><small>Mulai dari</small><strong>Rp 1.500</strong></div><span class="card-arrow">↗</span></div></div></div></section>
+		<section class="trust"><div class="container trust-inner"><div class="trust-item"><span class="trust-icon">⚡</span><div><strong>Proses kilat</strong><small>Diamond masuk dalam hitungan menit</small></div></div><div class="trust-item"><span class="trust-icon">◆</span><div><strong>Harga bersahabat</strong><small>Harga jelas tanpa biaya tersembunyi</small></div></div><div class="trust-item"><span class="trust-icon">✓</span><div><strong>Layanan terpercaya</strong><small>Siap membantu setiap hari</small></div></div></div></section>
+
+		<section class="shop-section" id="produk"><div class="container"><div class="section-head"><div><p class="section-kicker">01 / Pilih produk</p><h2 class="section-title">Diamond Mobile Legends</h2></div><p class="section-description">Pilih nominal sesuai kebutuhanmu. Harga sudah termasuk semua biaya.</p></div><div class="shop-grid"><div class="products" id="product-list"></div><aside class="checkout" id="cara-order"><h3>Checkout pesanan</h3><p class="checkout-subtitle">Isi data akun dengan benar sebelum membayar.</p><div class="field"><label for="user-id">User ID</label><input id="user-id" type="text" placeholder="Contoh: 123456789" inputmode="numeric"><small class="field-note">Buka profil Mobile Legends untuk menemukan User ID.</small></div><div class="field"><label for="server-id">Server ID</label><input id="server-id" type="text" placeholder="Contoh: 1234" inputmode="numeric"></div><p class="payment-title">Metode pembayaran</p><div class="payments"><label class="pay-option active"><input checked name="payment" type="radio" value="QRIS">QRIS</label><label class="pay-option"><input name="payment" type="radio" value="DANA">DANA</label><label class="pay-option"><input name="payment" type="radio" value="OVO">OVO</label></div><div class="order-total"><span>Total pembayaran</span><strong id="total">Rp 1.500</strong></div><button class="checkout-submit" id="checkout-button" type="button">Lanjutkan pembayaran ↗</button><p class="secure">🔒 Data kamu diproses secara aman</p><div class="notice" id="notice"></div></aside></div></div></section>
+	</main>
+
+	<footer id="bantuan"><div class="container"><div class="footer-main"><div><a class="brand" href="#top"><span class="brand-logo">R</span><span class="brand-name">Toko Diamond<span>Risma</span></span></a><p class="footer-copy">Teman top up diamond Mobile Legends kamu. Cepat, praktis, dan siap menemani push rank.</p></div><div class="footer-links"><a href="https://wa.me/6289652347498">WhatsApp</a><a href="#produk">Produk</a><a href="#cara-order">Cara order</a></div></div><div class="footer-bottom">© 2026 TOKO DIAMOND RISMA. Semua hak dilindungi.</div></div></footer>
+
+	<script>
+		const products = [
+			{ diamonds: 5, price: 1500 }, { diamonds: 12, price: 3500 }, { diamonds: 19, price: 5500 },
+			{ diamonds: 28, price: 8000 }, { diamonds: 36, price: 10000 }, { diamonds: 59, price: 16000, badge: "Favorit" },
+			{ diamonds: 85, price: 23000 }, { diamonds: 170, price: 45000 }, { diamonds: 296, price: 78000, badge: "Hemat" }
+		];
+		let selectedProduct = products[0];
+		const productList = document.querySelector("#product-list");
+		const total = document.querySelector("#total");
+		const notice = document.querySelector("#notice");
+		const formatPrice = (value) => `Rp ${value.toLocaleString("id-ID")}`;
+
+		function renderProducts() {
+			productList.innerHTML = products.map((product, index) => `
+				<article class="product ${index === 0 ? "selected" : ""}" data-index="${index}">
+					${product.badge ? `<span class="product-badge">${product.badge}</span>` : ""}
+					<div class="diamond">◆</div><h3>${product.diamonds} Diamond</h3><p>Mobile Legends</p>
+					<strong class="price">${formatPrice(product.price)}</strong><button type="button">Pilih produk</button>
+				</article>`).join("");
+			productList.querySelectorAll(".product").forEach((card) => card.addEventListener("click", () => {
+				productList.querySelectorAll(".product").forEach((item) => item.classList.remove("selected"));
+				card.classList.add("selected");
+				selectedProduct = products[Number(card.dataset.index)];
+				total.textContent = formatPrice(selectedProduct.price);
+				notice.classList.remove("show");
+			}));
+		}
+
+		document.querySelectorAll(".pay-option").forEach((option) => option.addEventListener("click", () => {
+			document.querySelectorAll(".pay-option").forEach((item) => item.classList.remove("active"));
+			option.classList.add("active");
+		}));
+
+		document.querySelector("#checkout-button").addEventListener("click", () => {
+			const userId = document.querySelector("#user-id").value.trim();
+			const serverId = document.querySelector("#server-id").value.trim();
+			const payment = document.querySelector("input[name='payment']:checked").value;
+			if (!userId || !serverId) {
+				notice.textContent = "Lengkapi User ID dan Server ID terlebih dahulu.";
+				notice.classList.add("show");
+				return;
+			}
+			notice.textContent = `Pesanan ${selectedProduct.diamonds} Diamond untuk akun ${userId} (${serverId}) siap diproses melalui ${payment}. Hubungi admin untuk menyelesaikan pembayaran.`;
+			notice.classList.add("show");
+		});
+
+		renderProducts();
+	</script>
+</body>
+</html>
